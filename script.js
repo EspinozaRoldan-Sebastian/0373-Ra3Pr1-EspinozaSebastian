@@ -51,3 +51,9 @@ function crearAlumne() {
     alumne.notaFinal = calcularNotaFinal(alumne);
     return alumne;
 }
+
+function calcularNotaFinal(alumne) {
+    return (alumne.examen * 0.6) +
+           (alumne.practiques * 0.3) +
+           (alumne.actitud * 0.1);
+}
