@@ -57,3 +57,8 @@ function calcularNotaFinal(alumne) {
            (alumne.practiques * 0.3) +
            (alumne.actitud * 0.1);
 }
+
+function mostrarMissatge(text, tipus) {
+    missatge.textContent = text;
+    missatge.className = tipus;
+}
