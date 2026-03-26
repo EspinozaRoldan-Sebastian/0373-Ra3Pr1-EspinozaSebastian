@@ -38,3 +38,16 @@ function validarFormulari() {
 
     return true;
 }
+
+function crearAlumne() {
+    const alumne = {
+        nom: nomInput.value.trim(),
+        examen: parseFloat(examenInput.value),
+        practiques: parseFloat(practiquesInput.value),
+        actitud: parseFloat(actitudInput.value),
+        notaFinal: 0
+    };
+
+    alumne.notaFinal = calcularNotaFinal(alumne);
+    return alumne;
+}
