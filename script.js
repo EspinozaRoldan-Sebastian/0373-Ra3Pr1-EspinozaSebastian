@@ -62,3 +62,27 @@ function mostrarMissatge(text, tipus) {
     missatge.textContent = text;
     missatge.className = tipus;
 }
+
+function mostrarAlumnes() {
+    cosTaula.innerHTML = "";
+
+    alumnes.forEach(function(alumne) {
+
+        const nota = alumne.notaFinal.toFixed(2);
+        const estat = alumne.notaFinal >= 5 ? "Aprovat" : "Suspès";
+        const classe = alumne.notaFinal >= 5 ? "aprovat" : "suspes";
+
+        const fila = `
+            <tr>
+                <td>${alumne.nom}</td>
+                <td>${alumne.examen.toFixed(2)}</td>
+                <td>${alumne.practiques.toFixed(2)}</td>
+                <td>${alumne.actitud.toFixed(2)}</td>
+                <td>${nota}</td>
+                <td class="${classe}">${estat}</td>
+            </tr>
+        `;
+
+        cosTaula.innerHTML += fila;
+    });
+}
