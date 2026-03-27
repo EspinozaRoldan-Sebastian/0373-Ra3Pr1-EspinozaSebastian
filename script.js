@@ -87,6 +87,16 @@ function mostrarAlumnes() {
     });
 }
 
+formulari.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (!validarFormulari()) return;
+    const alumne = crearAlumne();
+    alumnes.push(alumne);
+    mostrarAlumnes();
+    mostrarMissatge("Alumne afegit correctament", "correcte");
+    formulari.reset();
+});
+
 btnAsc.addEventListener("click", function() {
     alumnes.sort(function(a, b) {
         return a.notaFinal - b.notaFinal;
