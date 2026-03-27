@@ -68,7 +68,7 @@ function mostrarAlumnes() {
 
     alumnes.forEach(function(alumne) {
 
-        const nota = alumne.notaFinal.toFixed(2);
+        const nota = alumne.notaFinal.toFixed(1);
         const estat = alumne.notaFinal >= 5 ? "Aprovat" : "Suspès";
         const classe = alumne.notaFinal >= 5 ? "aprovat" : "suspes";
 
@@ -86,3 +86,17 @@ function mostrarAlumnes() {
         cosTaula.innerHTML += fila;
     });
 }
+
+btnAsc.addEventListener("click", function() {
+    alumnes.sort(function(a, b) {
+        return a.notaFinal - b.notaFinal;
+    });
+    mostrarAlumnes();
+});
+
+btnDesc.addEventListener("click", function() {
+    alumnes.sort(function(a, b) {
+        return b.notaFinal - a.notaFinal;
+    });
+    mostrarAlumnes();
+});
